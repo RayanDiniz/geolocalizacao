@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>Geolocalização</title>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="Cache-control" content="no-cache" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous" />
+
+</head>
+
+<body id="root">
+    <div class="container">
+        <h1>Suporte a Geolocalização</h1>
+        <h3 id="title"></h3>
+        <p>Esta aplicação funciona bloqueando uma região específica de acessar seu site, podendo ser manipulada para
+            bloquear qualquer outra região de sua preferência.</p>
+        <p>É usado API de geolocalização que existe nos navegadores atuais. É importante saber os browsers que dão suporte a essa API:</p>
+        <ul>
+            <li>Internet Explorer 9 ou superior</li>
+            <li>Firefox 3.5 ou superior</li>
+            <li>Safari 5.0 ou superior</li>
+            <li>Chrome 7.0 ou superior</li>
+            <li>Opera 10.6 ou superior</li>
+            <li>Safari (iOS) 3.2 ou superior</li>
+            <li>Andriod (browser padrão do SO) 2.1 ou superior</li>
+        </ul>
+        <p>Depois que o script captura a latitude e longitude do usuario com a API de geolocalização, ele converte para
+            identificar a cidade em que o usuario está situado com outra API chamada "Nominatim".</p>
+        <p>Você pode encontrar esta API em <a href=https://nominatim.openstreetmap.org/>nominatim.openstreetmap.org </a>
+                </p> <p>Faça um teste abaixo, observe o comportamento diferente para a cidade de Curitiba.</p>
+        <label>Selecione uma cidade para teste</label>
+        <select id="cidade" onChange="getPosition()">
+            <option value=1>Porto Velho</option>
+            <option value=2>Manaus</option>
+            <option value=3>Rio Branco</option>
+            <option value=4>Campo Grande</option>
+            <option value=5>Macapá</option>
+            <option value=6>Brasília</option>
+            <option value=7>Boa Vista</option>
+            <option value=8>Cuiabá</option>
+            <option value=9>Palmas</option>
+            <option value=10>São Paulo</option>
+            <option value=11>Teresina</option>
+            <option value=12>Rio de Janeiro </option>
+            <option value=13>Belém</option>
+            <option value=14>Goiânia</option>
+            <option value=15>Salvador</option>
+            <option value=16>Florianópolis</option>
+            <option value=17>São Luís</option>
+            <option value=18>Maceió</option>
+            <option value=19>Porto Alegre</option>
+            <option value=20>Curitiba</option>
+            <option value=21>Belo Horizonte</option>
+            <option value=22>Fortaleza </option>
+            <option value=23>Recife</option>
+            <option value=24>João Pessoa </option>
+            <option value=25>Aracaju</option>
+            <option value=26>Natal</option>
+            <option value=26>Natal</option>
+            <option value=27>Vitória</option>
+        </select>
+    </div>
+    <!--JavaScript--
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
