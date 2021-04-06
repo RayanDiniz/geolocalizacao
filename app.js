@@ -16,19 +16,23 @@ function getPosition() {
                         var option = select.options[select.selectedIndex];
                         var block = option.text;
 
-                        if (block == 'Curitiba') {
+                        if(cidade == block) {
                             var conteudo = '\n\
-                            <div class="alert alert-danger" role="alert">\n\
-                                <strong>Atenção!</strong> Este site não está disponível para a cidade de ' + block + '. \n\
-                            </div>';
+                            <div style="position: fixed; top: 0; bottom: 0; left: 0; right: 0; background-color: rgb(255, 255, 255); text-align: center;">\n\
+                                <div class="alert alert-danger mt-5" role="alert">\n\
+                                    <strong>Atenção!</strong> Site Bloqueado para sua cidade! Atualize a página...\n\
+                                </div>\n\
+                            </div>\n\
+                            ';
                         } else {
                             var conteudo = '\n\
-                            <div class="alert alert-success" role="alert">\n\
-                                <strong>Atenção!</strong> Este site esta disponível para a cidade de ' + block + ' \n\
+                            <div style="position: absolute; top: 0; right: 0; background-color: rgb(255, 255, 255); text-align: center;">\n\
+                            <strong>Site Liberado!</strong>\n\
                             </div>';
-                        };
-                        return conteudo;
+                        }
+                        return conteudo;    
                     }
+
                     var conteudo = selectCidade(conteudo);
                     var qualcidade = 'Você está na cidade de <i>' + cidade + '</i>';
                     var root = document.getElementById("root").innerHTML;
@@ -36,7 +40,7 @@ function getPosition() {
 
                     document.getElementById("root").innerHTML = root;
 
-                    document.getElementById("title").innerHTML = qualcidade;
+                    document.getElementById("local").innerHTML = qualcidade;
                 });
             },
 
@@ -57,7 +61,8 @@ function getPosition() {
                         erroDescricao += 'não sei o que foi, mas deu erro!';
                         break;
                 }
-                console.log(erroDescricao)
+                
+                alert(erroDescricao)
             }
         );
     };

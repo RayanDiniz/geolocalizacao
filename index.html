@@ -16,13 +16,14 @@
 
 </head>
 
-<body id="root">
-    <div class="container">
+<body>
+    <div class="container mt-5" id="root">
         <h1>Suporte a Geolocalização</h1>
-        <h3 id="title"></h3>
-        <p>Esta aplicação funciona bloqueando uma região específica de acessar seu site, podendo ser manipulada para
-            bloquear qualquer outra região de sua preferência.</p>
-        <p>É usado API de geolocalização que existe nos navegadores atuais. É importante saber os browsers que dão suporte a essa API:</p>
+
+        <p>Esta aplicação funciona bloqueando uma cidade específica de acessar seu site,
+            comparando a localização do usuário (<b id="local"></b>) e a cidade bloqueada definida no script,
+            usando a API de geolocalização que existe nos navegadores atuais.
+            É importante saber os browsers que dão suporte a essa API:</p>
         <ul>
             <li>Internet Explorer 9 ou superior</li>
             <li>Firefox 3.5 ou superior</li>
@@ -33,40 +34,49 @@
             <li>Andriod (browser padrão do SO) 2.1 ou superior</li>
         </ul>
         <p>Depois que o script captura a latitude e longitude do usuario com a API de geolocalização, ele converte para
-            identificar a cidade em que o usuario está situado com outra API chamada "Nominatim".</p>
-        <p>Você pode encontrar esta API em <a href=https://nominatim.openstreetmap.org/>nominatim.openstreetmap.org </a>
-                </p> <p>Faça um teste abaixo, observe o comportamento diferente para a cidade de Curitiba.</p>
-        <label>Selecione uma cidade para teste</label>
-        <select id="cidade" onChange="getPosition()">
-            <option value=1>Porto Velho</option>
-            <option value=2>Manaus</option>
-            <option value=3>Rio Branco</option>
-            <option value=4>Campo Grande</option>
-            <option value=5>Macapá</option>
-            <option value=6>Brasília</option>
-            <option value=7>Boa Vista</option>
-            <option value=8>Cuiabá</option>
-            <option value=9>Palmas</option>
-            <option value=10>São Paulo</option>
-            <option value=11>Teresina</option>
-            <option value=12>Rio de Janeiro </option>
-            <option value=13>Belém</option>
-            <option value=14>Goiânia</option>
-            <option value=15>Salvador</option>
-            <option value=16>Florianópolis</option>
-            <option value=17>São Luís</option>
-            <option value=18>Maceió</option>
-            <option value=19>Porto Alegre</option>
-            <option value=20>Curitiba</option>
-            <option value=21>Belo Horizonte</option>
-            <option value=22>Fortaleza </option>
-            <option value=23>Recife</option>
-            <option value=24>João Pessoa </option>
-            <option value=25>Aracaju</option>
-            <option value=26>Natal</option>
-            <option value=26>Natal</option>
-            <option value=27>Vitória</option>
-        </select>
+            identificar a cidade em que o usuario está situado com outra API chamada "Nominatim". Você pode encontrar
+            esta API em <a href=https://nominatim.openstreetmap.org />nominatim.openstreetmap.org </a>. Faça um teste
+            selecionando a cidade que deseja bloquear no menu superior.</p>
+    </div>
+    <!-- Nav tabs -->
+    <div class="nav-dark fixed-top">
+        <ul class="nav nav-tabs" id="navId">
+            <li class="nav-item">
+                <a href="#tab1Id" class="nav-link active">Selecione uma cidade para teste</a>
+            </li>
+            <li class="nav-item">
+                <select class="nav-link" id="cidade" onChange="getPosition()">
+                    <option class="dropdown-item" value=1>Porto Velho</option>
+                    <option value=2>Manaus</option>
+                    <option value=3>Rio Branco</option>
+                    <option value=4>Campo Grande</option>
+                    <option value=5>Macapá</option>
+                    <option value=6>Brasília</option>
+                    <option value=7>Boa Vista</option>
+                    <option value=8>Cuiabá</option>
+                    <option value=9>Palmas</option>
+                    <option value=10>São Paulo</option>
+                    <option value=11>Teresina</option>
+                    <option value=12>Rio de Janeiro </option>
+                    <option value=13>Belém</option>
+                    <option value=14>Goiânia</option>
+                    <option value=15>Salvador</option>
+                    <option value=16>Florianópolis</option>
+                    <option value=17>São Luís</option>
+                    <option value=18>Maceió</option>
+                    <option value=19>Porto Alegre</option>
+                    <option value=20>Curitiba</option>
+                    <option value=21>Belo Horizonte</option>
+                    <option value=22>Fortaleza </option>
+                    <option value=23>Recife</option>
+                    <option value=24>João Pessoa </option>
+                    <option value=25>Aracaju</option>
+                    <option value=26>Natal</option>
+                    <option value=26>Natal</option>
+                    <option value=27>Vitória</option>
+                </select>
+            </li>
+        </ul>
     </div>
     <!--JavaScript--
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
@@ -74,10 +84,10 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+        </script>
     <script type="text/javascript" src="app.js"></script>
 </body>
 
